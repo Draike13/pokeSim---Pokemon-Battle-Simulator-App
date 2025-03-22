@@ -12,20 +12,35 @@ export class HelperService {
     return this.dataService.pokeData();
   }
 
-  party: Pokemon[] = [];
-  partyCount = 0;
+  playerParty: Pokemon[] = [];
+  computerParty: Pokemon[] = [];
 
-  makeParty() {
+  makePlayerParty() {
+    let partyCount = 0;
     do {
       let randomIndex = Math.floor(Math.random() * this.pokemon.length);
       if (
-        !this.party.some(
+        !this.playerParty.some(
           (currentPokemon) => currentPokemon.id === this.pokemon[randomIndex].id
         )
       ) {
-        this.party.push(this.pokemon[randomIndex]);
-        this.partyCount++;
+        this.playerParty.push(this.pokemon[randomIndex]);
+        partyCount++;
       }
-    } while (this.partyCount < 6);
+    } while (partyCount < 6);
+  }
+  makeComputerParty() {
+    let partyCount = 0;
+    do {
+      let randomIndex = Math.floor(Math.random() * this.pokemon.length);
+      if (
+        !this.computerParty.some(
+          (currentPokemon) => currentPokemon.id === this.pokemon[randomIndex].id
+        )
+      ) {
+        this.computerParty.push(this.pokemon[randomIndex]);
+        partyCount++;
+      }
+    } while (partyCount < 6);
   }
 }

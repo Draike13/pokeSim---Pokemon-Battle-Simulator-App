@@ -15,6 +15,6 @@ export class ComputerContainerComponent {
   }
 
   getParty() {
-    return this.helperService.party;
+    return this.helperService.computerParty;
   }
 }
