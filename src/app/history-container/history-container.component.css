@@ -2,3 +2,12 @@
   background-image: url("https://ssb.wiki.gallery/images/7/7b/Pok%C3%A9_Ball_Origin.png");
   background-size: cover;
 }
+
+.example-card {
+  height: 85vh;
+}
+
+.options {
+  position: absolute;
+  bottom: 0;
+}

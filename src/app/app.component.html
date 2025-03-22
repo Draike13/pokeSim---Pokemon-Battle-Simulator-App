@@ -1,11 +1,17 @@
 <app-header />
 <div class="main">
   <app-history-container class="history-container" />
-  <app-holding-container class="player-container"
-    ><app-active-player-list
-  /></app-holding-container>
-  <app-holding-container class="computer-container"
-    ><app-computer-container
-  /></app-holding-container>
+  <div class="playmat">
+    <div class="stage">
+      <app-holding-container class="player-container"
+        ><app-active-player-list
+      /></app-holding-container>
+      <button class="battle-button" mat-button>Start Battle</button>
+      <app-holding-container class="computer-container"
+        ><app-computer-container
+      /></app-holding-container>
+    </div>
+    <app-winner-box class="results" />
+  </div>
 </div>
 <app-footer />

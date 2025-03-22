@@ -5,16 +5,20 @@ import { HistoryContainerComponent } from './history-container/history-container
 import { HoldingContainerComponent } from './holding-container/holding-container.component';
 import { ActivePlayerListComponent } from './active-player-list/active-player-list.component';
 import { ComputerContainerComponent } from './computer-container/computer-container.component';
+import { WinnerBoxComponent } from './winner-box/winner-box.component';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-root',
   imports: [
+    MatButtonModule,
     HeaderComponent,
     FooterComponent,
     HistoryContainerComponent,
     HoldingContainerComponent,
     ActivePlayerListComponent,
     ComputerContainerComponent,
+    WinnerBoxComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
