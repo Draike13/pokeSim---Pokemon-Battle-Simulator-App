@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { DataService } from '../data.service';
 import { Pokemon } from '../pokemon.model';
 import { MatButtonModule } from '@angular/material/button';
+import { HelperService } from '../helper.service';
 
 @Component({
   selector: 'app-active-player-list',
@@ -10,25 +10,11 @@ import { MatButtonModule } from '@angular/material/button';
   styleUrl: './active-player-list.component.css',
 })
 export class ActivePlayerListComponent {
-  constructor(private dataService: DataService) {
-    this.getList();
+  constructor(private helperService: HelperService) {
+    this.getParty();
   }
-  pokelist: Pokemon[] = [];
-  party: Pokemon[] = [];
-  partyCount = 0;
 
-  getList() {
-    this.pokelist = this.dataService.pokeData;
-    do {
-      let randomIndex = Math.floor(Math.random() * this.pokelist.length);
-      if (
-        !this.party.some(
-          (pokemon) => pokemon.id === this.pokelist[randomIndex].id
-        )
-      ) {
-        this.party.push(this.pokelist[randomIndex]);
-        this.partyCount++;
-      }
-    } while (this.partyCount < 6);
+  getParty() {
+    return this.helperService.party;
   }
 }

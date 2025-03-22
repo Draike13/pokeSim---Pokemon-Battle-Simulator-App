@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, signal, WritableSignal } from '@angular/core';
 import { Pokemon } from './pokemon.model';
 
 @Injectable({
@@ -6,7 +6,7 @@ import { Pokemon } from './pokemon.model';
 })
 export class DataService {
   constructor() {}
-  pokeData: Pokemon[] = [
+  pokeData: WritableSignal<Pokemon[]> = signal([
     {
       id: 6,
       name: 'Charizard',
@@ -385,5 +385,5 @@ export class DataService {
     //   sDef: 250,
     //   //Will only enter list after Gimighoul has 10 wins
     // },
-  ];
+  ]);
 }

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { DataService } from '../data.service';
 import { Pokemon } from '../pokemon.model';
 import { MatButtonModule } from '@angular/material/button';
+import { HelperService } from '../helper.service';
 
 @Component({
   selector: 'app-computer-container',
@@ -10,15 +10,11 @@ import { MatButtonModule } from '@angular/material/button';
   styleUrl: './computer-container.component.css',
 })
 export class ComputerContainerComponent {
-  constructor(private dataService: DataService) {
-    this.getList();
+  constructor(private helperService: HelperService) {
+    this.getParty();
   }
-  pokelist: Pokemon[] = [];
-  party: Pokemon[] = [];
 
-  getList() {
-    this.pokelist = this.dataService.pokeData;
-    let randomIndex = Math.floor(Math.random() * (this.pokelist.length + 1));
-    this.party.push(this.pokelist[randomIndex]);
+  getParty() {
+    return this.helperService.party;
   }
 }
