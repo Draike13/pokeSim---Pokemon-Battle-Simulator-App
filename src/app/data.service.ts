@@ -169,17 +169,16 @@ export class DataService {
       sDef: 1,
       // 1% chance if selected to become "The Perfect Bidoof"
     },
-    /* {
+    {
       id: 399,
-      name: "The Perfect Bidoof",
-      type: "God",
-      selected: False,
+      name: 'The Perfect Bidoof',
+      type: 'God',
+      selected: false,
       atk: 999,
       def: 999,
       sAtk: 999,
       sDef: 999,
-
-    },*/
+    },
     {
       id: 493,
       name: 'Arceus',

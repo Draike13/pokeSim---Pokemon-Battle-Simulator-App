@@ -14,8 +14,21 @@ export class ActivePlayerListComponent {
     this.getList();
   }
   pokelist: Pokemon[] = [];
+  party: Pokemon[] = [];
+  partyCount = 0;
 
   getList() {
     this.pokelist = this.dataService.pokeData;
+    do {
+      let randomIndex = Math.floor(Math.random() * this.pokelist.length);
+      if (
+        !this.party.some(
+          (pokemon) => pokemon.id === this.pokelist[randomIndex].id
+        )
+      ) {
+        this.party.push(this.pokelist[randomIndex]);
+        this.partyCount++;
+      }
+    } while (this.partyCount < 6);
   }
 }

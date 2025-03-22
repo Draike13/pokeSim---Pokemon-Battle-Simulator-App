@@ -1,1 +1,5 @@
-<p>computer-container works!</p>
+@for (pokemon of party; track pokemon.id) {
+<div>
+  <button mat-button>{{ pokemon.name }}</button>
+</div>
+}
