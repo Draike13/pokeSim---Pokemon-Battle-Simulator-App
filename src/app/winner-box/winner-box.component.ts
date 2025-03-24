@@ -24,9 +24,11 @@ export class WinnerBoxComponent {
   }
   ngDoCheck() {
     this.playerAttackCalc();
+    this.computerAttackCalc();
   }
 
   playerAttack: WritableSignal<number> = signal(0);
+  computerAttack: WritableSignal<number> = signal(0);
 
   playerAttackCalc() {
     if (this.playerPokemon.atk !== null) {
@@ -35,14 +37,11 @@ export class WinnerBoxComponent {
       this.playerAttack.set(this.playerPokemon.sAtk);
     }
   }
-
-  // computerAttack() {
-  //   let displayPokemon = computerPokemon;
-  //   if (typeof displayPokemon?.atk === 'number') {
-  //     this.computerAttackStat = displayPokemon.atk;
-  //   } else if (typeof displayPokemon?.sAtk === 'number') {
-  //     this.computerAttackStat = displayPokemon.sAtk;
-  //   }
-  //
-  // }
+  computerAttackCalc() {
+    if (this.computerPokemon.atk !== null) {
+      this.computerAttack.set(this.computerPokemon.atk);
+    } else {
+      this.computerAttack.set(this.computerPokemon.sAtk);
+    }
+  }
 }
