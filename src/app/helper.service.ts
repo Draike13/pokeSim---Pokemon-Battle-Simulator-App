@@ -14,6 +14,8 @@ export class HelperService {
 
   playerParty: Pokemon[] = [];
   computerParty: Pokemon[] = [];
+  playerBattlePokemon?: Pokemon;
+  PokemonAttack: number | string = 'Battle Soon';
 
   makePlayerParty() {
     let partyCount = 0;
@@ -47,5 +49,14 @@ export class HelperService {
   setupBattle(pokemon: Pokemon) {
     this.playerParty.map((eachPokemon) => (eachPokemon.selected = false));
     pokemon.selected = true;
+    this.playerBattlePokemon = pokemon;
+  }
+  calculateBattle() {
+    let displayPokemon = this.playerBattlePokemon;
+    if (typeof displayPokemon?.atk === 'number') {
+      this.PokemonAttack = displayPokemon.atk;
+    } else if (typeof displayPokemon?.sAtk === 'number') {
+      this.PokemonAttack = displayPokemon.sAtk;
+    }
   }
 }

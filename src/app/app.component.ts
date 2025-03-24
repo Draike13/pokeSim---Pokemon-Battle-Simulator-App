@@ -7,6 +7,7 @@ import { ActivePlayerListComponent } from './active-player-list/active-player-li
 import { ComputerContainerComponent } from './computer-container/computer-container.component';
 import { WinnerBoxComponent } from './winner-box/winner-box.component';
 import { MatButtonModule } from '@angular/material/button';
+import { BattleButtonComponent } from './battle-button/battle-button.component';
 
 @Component({
   selector: 'app-root',
@@ -19,6 +20,7 @@ import { MatButtonModule } from '@angular/material/button';
     ActivePlayerListComponent,
     ComputerContainerComponent,
     WinnerBoxComponent,
+    BattleButtonComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',

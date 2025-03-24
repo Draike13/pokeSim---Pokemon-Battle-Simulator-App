@@ -30,14 +30,7 @@
   max-width: 600px;
   min-height: 200px;
 }
-.battle-button {
-  background-color: #161215;
-  border: 4px;
-  border: solid;
-  font-size: 2rem;
-  height: 10vh;
-  width: 15vw;
-}
+
 .results {
   flex: 1 1 auto;
 }

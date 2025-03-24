@@ -10,5 +10,10 @@ import { HelperService } from '../helper.service';
   styleUrl: './winner-box.component.css',
 })
 export class WinnerBoxComponent {
-  constructor(private helperService: HelperService) {}
+  constructor(private helperService: HelperService) {
+    this.setAttack();
+  }
+  setAttack() {
+    return this.helperService.PokemonAttack;
+  }
 }

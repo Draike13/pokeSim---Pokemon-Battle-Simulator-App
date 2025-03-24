@@ -9,3 +9,10 @@
   margin-left: 1rem;
   color: #ffabf3;
 }
+
+.attack-total {
+  display: flex;
+  justify-content: center;
+  font-size: 3rem;
+  color: #ffabf3;
+}
