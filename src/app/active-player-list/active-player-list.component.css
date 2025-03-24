@@ -6,3 +6,7 @@
   font-size: 2.5rem;
   margin-top: 3rem;
 }
+
+.selected {
+  border: 4px outset #ffabf3;
+}

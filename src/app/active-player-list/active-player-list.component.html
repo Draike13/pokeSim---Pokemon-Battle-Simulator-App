@@ -1,6 +1,11 @@
 @for (pokemon of getParty(); track pokemon.id) {
 <div class="player-pokemon-list">
-  <button (click)="battle(pokemon)" class="pokemon-button" mat-button>
+  <button
+    [ngClass]="{ selected: pokemon.selected }"
+    (click)="battle(pokemon)"
+    class="pokemon-button"
+    mat-button
+  >
     {{ pokemon.name }}
   </button>
 </div>

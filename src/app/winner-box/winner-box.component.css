@@ -1,3 +1,11 @@
 .example-card {
   width: 50vw;
+  height: 20vh;
+  margin-top: 0.5rem;
+}
+
+.battle {
+  font-size: 2rem;
+  margin-left: 1rem;
+  color: #ffabf3;
 }

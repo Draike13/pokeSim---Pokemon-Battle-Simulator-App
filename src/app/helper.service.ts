@@ -1,4 +1,4 @@
-import { Injectable, WritableSignal } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { DataService } from './data.service';
 import { Pokemon } from './pokemon.model';
 
@@ -45,6 +45,7 @@ export class HelperService {
   }
 
   setupBattle(pokemon: Pokemon) {
+    this.playerParty.map((eachPokemon) => (eachPokemon.selected = false));
     pokemon.selected = true;
   }
 }
