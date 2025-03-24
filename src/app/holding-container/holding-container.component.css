@@ -4,5 +4,12 @@
 }
 .example-card {
   height: 50vh;
+  width: 30vw;
   overflow: auto;
+}
+
+.party {
+  font-size: 2rem;
+  margin-left: 1rem;
+  color: #ffabf3;
 }

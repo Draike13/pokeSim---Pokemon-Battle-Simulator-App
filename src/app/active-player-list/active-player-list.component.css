@@ -1,0 +1,8 @@
+.player-pokemon-list {
+  display: flex;
+  justify-content: center;
+}
+.pokemon-button {
+  font-size: 2.5rem;
+  margin-top: 3rem;
+}
