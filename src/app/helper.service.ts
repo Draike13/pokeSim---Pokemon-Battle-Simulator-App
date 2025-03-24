@@ -71,23 +71,5 @@ export class HelperService {
     this.playerBattlePokemon.set(this.playerSelectPokemon);
   }
 
-  // playerAttack() {
-  //   let displayPokemon = this.playerBattlePokemon;
-  //   if (typeof displayPokemon?.atk === 'number') {
-  //     this.playerAttackStat = displayPokemon.atk;
-  //   } else if (typeof displayPokemon?.sAtk === 'number') {
-  //     this.playerAttackStat = displayPokemon.sAtk;
-  //   }
-  //   console.log(this.playerAttackStat);
-  // }
-
-  // computerAttack() {
-  //   let displayPokemon = computerPokemon;
-  //   if (typeof displayPokemon?.atk === 'number') {
-  //     this.computerAttackStat = displayPokemon.atk;
-  //   } else if (typeof displayPokemon?.sAtk === 'number') {
-  //     this.computerAttackStat = displayPokemon.sAtk;
-  //   }
-  //   console.log(this.computerAttackStat);
-  // }
+  
 }

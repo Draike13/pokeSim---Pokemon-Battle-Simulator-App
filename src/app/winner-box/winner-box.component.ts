@@ -1,4 +1,10 @@
-import { Component, NgModule } from '@angular/core';
+import {
+  Component,
+  computed,
+  NgModule,
+  signal,
+  WritableSignal,
+} from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { HelperService } from '../helper.service';
@@ -16,4 +22,27 @@ export class WinnerBoxComponent {
   get playerPokemon() {
     return this.helperService.playerBattlePokemon();
   }
+  ngDoCheck() {
+    this.playerAttackCalc();
+  }
+
+  playerAttack: WritableSignal<number> = signal(0);
+
+  playerAttackCalc() {
+    if (this.playerPokemon.atk !== null) {
+      this.playerAttack.set(this.playerPokemon.atk);
+    } else {
+      this.playerAttack.set(this.playerPokemon.sAtk);
+    }
+  }
+
+  // computerAttack() {
+  //   let displayPokemon = computerPokemon;
+  //   if (typeof displayPokemon?.atk === 'number') {
+  //     this.computerAttackStat = displayPokemon.atk;
+  //   } else if (typeof displayPokemon?.sAtk === 'number') {
+  //     this.computerAttackStat = displayPokemon.sAtk;
+  //   }
+  //
+  // }
 }
