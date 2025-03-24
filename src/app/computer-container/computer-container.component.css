@@ -3,6 +3,9 @@
   justify-content: center;
 }
 .pokemon-button {
-  font-size: 2.5rem;
-  margin-top: 3rem;
+  font-size: 1.75rem;
+  margin-top: 1.25rem;
+}
+.selected {
+  border: 4px outset #ffabf3;
 }

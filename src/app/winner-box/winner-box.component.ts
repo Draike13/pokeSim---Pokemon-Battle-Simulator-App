@@ -1,8 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { HelperService } from '../helper.service';
-
 @Component({
   selector: 'app-winner-box',
   imports: [MatCardModule, MatButtonModule],
@@ -10,10 +9,11 @@ import { HelperService } from '../helper.service';
   styleUrl: './winner-box.component.css',
 })
 export class WinnerBoxComponent {
-  constructor(private helperService: HelperService) {
-    this.setAttack();
+  constructor(private helperService: HelperService) {}
+  get computerPokemon() {
+    return this.helperService.computerBattlePokemon();
   }
-  setAttack() {
-    return this.helperService.PokemonAttack;
+  get playerPokemon() {
+    return this.helperService.playerBattlePokemon();
   }
 }

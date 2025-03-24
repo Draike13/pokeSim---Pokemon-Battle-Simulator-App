@@ -3,5 +3,13 @@
     <div mat-card-avatar class="example-header-image"></div>
     <mat-card-title class="battle">BATTLE!</mat-card-title>
   </mat-card-header>
-  <mat-card-content class="attack-total">{{ setAttack() }}</mat-card-content>
+  <mat-card-content class="attack-total">
+    {{ playerPokemon.atk }}
+    {{ playerPokemon.name }}
+
+    <mat-card-content>
+      {{ computerPokemon.atk }}
+      {{ computerPokemon.name }}
+    </mat-card-content>
+  </mat-card-content>
 </mat-card>
