@@ -17,4 +17,8 @@ export class ActivePlayerListComponent {
   getParty() {
     return this.helperService.playerParty;
   }
+
+  battle(pokemon: Pokemon) {
+    this.helperService.setupBattle(pokemon);
+  }
 }

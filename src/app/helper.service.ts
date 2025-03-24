@@ -43,4 +43,8 @@ export class HelperService {
       }
     } while (partyCount < 6);
   }
+
+  setupBattle(pokemon: Pokemon) {
+    pokemon.selected = true;
+  }
 }
