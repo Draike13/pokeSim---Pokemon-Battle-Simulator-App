@@ -9,5 +9,5 @@ export interface Pokemon {
   sDef: number | null;
   wins?: number;
   losses?: number;
-  Image?: string;
+  image?: string;
 }

@@ -1,4 +1,10 @@
-import { Injectable, Signal, signal, WritableSignal } from '@angular/core';
+import {
+  effect,
+  Injectable,
+  Signal,
+  signal,
+  WritableSignal,
+} from '@angular/core';
 import { DataService } from './data.service';
 import { Pokemon } from './pokemon.model';
 
@@ -17,10 +23,10 @@ export class HelperService {
 
   playerBattlePokemon: WritableSignal<any> = signal('');
   computerBattlePokemon: WritableSignal<any> = signal('');
-  playerSelectPokemon!: Pokemon;
+  playerSelectPokemon: WritableSignal<any> = signal('');
 
-  computerAttackStat?: number;
-  playerAttackStat?: number;
+  playerBackground: WritableSignal<string> = signal('transparent');
+  computerBackground: WritableSignal<string> = signal('transparent');
 
   makePlayerParty() {
     let partyCount = 0;
@@ -54,10 +60,16 @@ export class HelperService {
     } while (partyCount < 6);
   }
 
+  setPlayerBackground() {
+    if (this.playerSelectPokemon().image) {
+      this.playerBackground.set(this.playerSelectPokemon().image!);
+    } else this.playerBackground.set('transparent');
+  }
+
   setupBattle(pokemon: Pokemon) {
     this.playerParty.map((eachPokemon) => (eachPokemon.selected = false));
     pokemon.selected = true;
-    this.playerSelectPokemon = pokemon;
+    this.playerSelectPokemon.set(pokemon);
   }
   computerChoice() {
     this.computerParty.map((eachPokemon) => (eachPokemon.selected = false));
@@ -70,6 +82,4 @@ export class HelperService {
     this.computerChoice();
     this.playerBattlePokemon.set(this.playerSelectPokemon);
   }
-
-  
 }

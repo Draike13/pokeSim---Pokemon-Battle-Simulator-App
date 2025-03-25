@@ -77,6 +77,7 @@ export class DataService {
       def: 150,
       sAtk: 200,
       sDef: 150,
+      image:'https://i.pinimg.com/736x/d9/6f/e7/d96fe7a18e2e6eaefb8eafd58143b36b.jpg',
     },
     {
       id: 151,

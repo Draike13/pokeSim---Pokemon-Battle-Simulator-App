@@ -1,4 +1,4 @@
-.player-pokemon-list {
+.player-pokemon {
   display: flex;
   justify-content: center;
 }
@@ -8,5 +8,5 @@
 }
 
 .selected {
-  border: 4px outset #ffabf3;
+  border: 2px outset #ffabf3;
 }

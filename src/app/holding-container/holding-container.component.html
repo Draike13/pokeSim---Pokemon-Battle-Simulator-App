@@ -1,4 +1,8 @@
-<mat-card class="example-card" appearance="outlined">
+<mat-card
+  [ngStyle]="{ 'background-image': 'url(' + playerBackgroundColor + ')' }"
+  class="example-card"
+  appearance="outlined"
+>
   <mat-card-header>
     <div mat-card-avatar class="example-header-image"></div>
     <mat-card-title class="party">Pokemon Party</mat-card-title>
