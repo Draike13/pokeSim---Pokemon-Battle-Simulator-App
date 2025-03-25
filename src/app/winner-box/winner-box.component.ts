@@ -1,6 +1,7 @@
 import {
   Component,
   computed,
+  effect,
   NgModule,
   signal,
   WritableSignal,
@@ -22,13 +23,17 @@ export class WinnerBoxComponent {
   get playerPokemon() {
     return this.helperService.playerBattlePokemon();
   }
-  ngDoCheck() {
-    this.playerAttackCalc();
-    this.computerAttackCalc();
-  }
+  battleReady = effect(() => {
+    if (this.playerPokemon) {
+      this.playerAttackCalc();
+    }
+    if (this.computerPokemon) {
+      this.computerAttackCalc();
+    }
+  });
 
-  playerAttack: WritableSignal<number> = signal(0);
-  computerAttack: WritableSignal<number> = signal(0);
+  playerAttack: WritableSignal<number | string> = signal('');
+  computerAttack: WritableSignal<number | string> = signal('');
 
   playerAttackCalc() {
     if (this.playerPokemon.atk !== null) {

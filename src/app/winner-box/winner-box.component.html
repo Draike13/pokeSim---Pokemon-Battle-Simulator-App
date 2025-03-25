@@ -4,12 +4,13 @@
     <mat-card-title class="battle">BATTLE!</mat-card-title>
   </mat-card-header>
   <mat-card-content class="attack-total">
-    {{ playerAttack() }}
-    {{ playerPokemon.name }}
-
-    <mat-card-content>
+    <div class="holder">
+      {{ playerAttack() }}
+      {{ playerPokemon.name }}
+    </div>
+    <div class="holder">
       {{ computerAttack() }}
       {{ computerPokemon.name }}
-    </mat-card-content>
+    </div>
   </mat-card-content>
 </mat-card>

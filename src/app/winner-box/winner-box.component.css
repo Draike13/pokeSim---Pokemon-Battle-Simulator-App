@@ -11,8 +11,12 @@
 }
 
 .attack-total {
+  height: 60%;
   display: flex;
-  justify-content: center;
+  gap: 2rem;
   font-size: 1rem;
   color: #ffabf3;
+}
+.holder {
+  display: flex;
 }
