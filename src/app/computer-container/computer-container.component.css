@@ -3,6 +3,7 @@
   justify-content: center;
 }
 .pokemon-button {
+  background-color: #161215c8;
   font-size: 1.75rem;
   margin-top: 1.25rem;
 }

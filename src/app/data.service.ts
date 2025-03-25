@@ -66,6 +66,8 @@ export class DataService {
       def: 999,
       sAtk: 999,
       sDef: 999,
+      image:
+        'https://images.squarespace-cdn.com/content/v1/63477d5b22ce645aee564230/1667268949777-WZ1DYW63G29A5DS407UJ/eevee-1.jpg',
       //no one defeats Eevee!
     },
     {
@@ -77,7 +79,8 @@ export class DataService {
       def: 150,
       sAtk: 200,
       sDef: 150,
-      image:'https://i.pinimg.com/736x/d9/6f/e7/d96fe7a18e2e6eaefb8eafd58143b36b.jpg',
+      image:
+        'https://i.pinimg.com/736x/d9/6f/e7/d96fe7a18e2e6eaefb8eafd58143b36b.jpg',
     },
     {
       id: 151,
@@ -88,6 +91,8 @@ export class DataService {
       def: 50,
       sAtk: 250,
       sDef: 50,
+      image:
+        'https://wallpapers.com/images/hd/pokemon-mew-l3zcoeif97pyxwct.jpg',
     },
     {
       id: 249,
