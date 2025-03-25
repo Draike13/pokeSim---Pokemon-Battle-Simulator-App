@@ -7,10 +7,10 @@
   <mat-card-content class="attack-total">
     <!-- Player Pokémon Card -->
     <mat-card class="inner-card player-card">
-      <mat-card-title>{{ playerPokemon.name }}</mat-card-title>
+      <mat-card-title>{{ playerPokemon().name }}</mat-card-title>
       <mat-card-content>
         <p>Attack: {{ playerAttack() }}</p>
-        <p>Type: {{ playerPokemon.type }}</p>
+        <p>Type: {{ playerPokemon().type }}</p>
       </mat-card-content>
     </mat-card>
 

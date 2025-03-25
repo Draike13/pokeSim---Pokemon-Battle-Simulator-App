@@ -66,6 +66,12 @@ export class HelperService {
     } else this.playerBackground.set('transparent');
   }
 
+  setComputerBackground() {
+    if (this.computerBattlePokemon().image) {
+      this.computerBackground.set(this.computerBattlePokemon().image!);
+    } else this.computerBackground.set('transparent');
+  }
+
   setupBattle(pokemon: Pokemon) {
     this.playerParty.map((eachPokemon) => (eachPokemon.selected = false));
     pokemon.selected = true;

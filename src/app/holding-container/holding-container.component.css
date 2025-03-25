@@ -2,7 +2,14 @@
   background-image: url("https://ssb.wiki.gallery/images/7/7b/Pok%C3%A9_Ball_Origin.png");
   background-size: cover;
 }
+.header {
+  background-color: #161215be;
+}
 .example-card {
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: brightness(70%);
   height: 50vh;
   width: 30vw;
   overflow-y: auto;

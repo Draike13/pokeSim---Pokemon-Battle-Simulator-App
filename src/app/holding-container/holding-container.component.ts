@@ -1,4 +1,11 @@
-import { Component, effect, Input } from '@angular/core';
+import {
+  Component,
+  effect,
+  Input,
+  signal,
+  Signal,
+  WritableSignal,
+} from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { NgStyle } from '@angular/common';
@@ -11,7 +18,7 @@ import { HelperService } from '../helper.service';
   styleUrl: './holding-container.component.css',
 })
 export class HoldingContainerComponent {
-  @Input() containerId!: 'first' | 'second';
+  @Input() backgroundSignal: WritableSignal<string> = signal('transparent');
   constructor(private helperService: HelperService) {}
 
   get playerBackgroundColor() {

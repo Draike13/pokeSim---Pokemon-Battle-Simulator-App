@@ -8,6 +8,7 @@ import { ComputerContainerComponent } from './computer-container/computer-contai
 import { WinnerBoxComponent } from './winner-box/winner-box.component';
 import { MatButtonModule } from '@angular/material/button';
 import { BattleButtonComponent } from './battle-button/battle-button.component';
+import { HelperService } from './helper.service';
 
 @Component({
   selector: 'app-root',
@@ -27,4 +28,11 @@ import { BattleButtonComponent } from './battle-button/battle-button.component';
 })
 export class AppComponent {
   title = 'pokeSim';
+  constructor(private helperService: HelperService) {}
+  get playerBackground() {
+    return this.helperService.playerBackground;
+  }
+  get computerBackground() {
+    return this.helperService.computerBackground;
+  }
 }

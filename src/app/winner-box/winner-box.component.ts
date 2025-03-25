@@ -36,10 +36,10 @@ export class WinnerBoxComponent {
   computerAttack: WritableSignal<number | string> = signal('');
 
   playerAttackCalc() {
-    if (this.playerPokemon.atk !== null) {
-      this.playerAttack.set(this.playerPokemon.atk);
+    if (this.playerPokemon()?.atk !== null) {
+      this.playerAttack.set(this.playerPokemon().atk);
     } else {
-      this.playerAttack.set(this.playerPokemon.sAtk);
+      this.playerAttack.set(this.playerPokemon().sAtk);
     }
   }
   computerAttackCalc() {
