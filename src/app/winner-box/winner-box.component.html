@@ -1,16 +1,27 @@
 <mat-card class="example-card" appearance="outlined">
-  <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
+  <mat-card-header class="header">
     <mat-card-title class="battle">BATTLE!</mat-card-title>
   </mat-card-header>
+  @if (computerPokemon){
+
   <mat-card-content class="attack-total">
-    <div class="holder">
-      {{ playerAttack() }}
-      {{ playerPokemon.name }}
-    </div>
-    <div class="holder">
-      {{ computerAttack() }}
-      {{ computerPokemon.name }}
-    </div>
+    <!-- Player Pokémon Card -->
+    <mat-card class="inner-card player-card">
+      <mat-card-title>{{ playerPokemon.name }}</mat-card-title>
+      <mat-card-content>
+        <p>Attack: {{ playerAttack() }}</p>
+        <p>Type: {{ playerPokemon.type }}</p>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- Computer Pokémon Card -->
+    <mat-card class="inner-card computer-card">
+      <mat-card-title>{{ computerPokemon.name }}</mat-card-title>
+      <mat-card-content>
+        <p>Attack: {{ computerAttack() }}</p>
+        <p>Type: {{ computerPokemon.type }}</p>
+      </mat-card-content>
+    </mat-card>
   </mat-card-content>
+  }
 </mat-card>
