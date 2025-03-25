@@ -82,6 +82,7 @@ export class HelperService {
     let randomIndex = Math.floor(Math.random() * this.computerParty.length);
     this.computerParty[randomIndex].selected = true;
     this.computerBattlePokemon.set(this.computerParty[randomIndex]);
+    this.setComputerBackground();
   }
 
   calculateBattle() {
