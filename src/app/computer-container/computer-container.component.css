@@ -4,8 +4,8 @@
 }
 .pokemon-button {
   background-color: #161215c8;
-  font-size: 1.75rem;
-  margin-top: 1.25rem;
+  font-size: 1.5rem;
+  margin-bottom: 1vh;
 }
 .selected {
   border: 2px outset #ffabf3;

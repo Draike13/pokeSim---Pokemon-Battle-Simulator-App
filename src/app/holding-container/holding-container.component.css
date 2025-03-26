@@ -1,8 +1,10 @@
 .example-header-image {
+  margin: 0;
   background-image: url("https://ssb.wiki.gallery/images/7/7b/Pok%C3%A9_Ball_Origin.png");
   background-size: cover;
 }
 .header {
+  padding-bottom: 0.5rem;
   background-color: #161215be;
 }
 .example-card {
@@ -10,12 +12,16 @@
   background-position: center;
   background-repeat: no-repeat;
   filter: brightness(70%);
-  height: 50vh;
+  height: 55vh;
   width: 30vw;
   overflow-y: auto;
   overflow-x: hidden;
+  transform: translate(0, -10%);
 }
-
+.content {
+  margin: 0.25rem;
+  padding: 0px;
+}
 .party {
   font-size: 2rem;
   margin-left: 1rem;

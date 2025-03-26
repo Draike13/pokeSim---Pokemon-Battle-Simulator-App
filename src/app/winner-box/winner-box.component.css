@@ -1,34 +1,12 @@
-/* .example-card {
-  width: 50vw;
-  height: 20vh;
-  margin-top: 0.5rem;
-}
-
-.battle {
-  font-size: 2rem;
-  margin-left: 1rem;
-  color: #ffabf3;
-}
-
-.attack-total {
-  height: 60%;
-  display: flex;
-  gap: 2rem;
-  font-size: 1rem;
-  color: #ffabf3;
-}
-.holder {
-  display: flex;
-} */
-
 .example-card {
   width: 50vw;
-  height: 20vh;
+  height: 18vh;
   margin-top: 0.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 0rem 1rem 0.25rem 1rem;
+  transform: translate(0, -25%);
 }
 .header {
   padding: 0;
@@ -53,6 +31,7 @@
 
 /* Individual Pokémon Cards */
 .inner-card {
+  height: 10vh;
   flex: 1; /* Makes both cards equal width */
   padding: 0.25rem;
   text-align: center;
@@ -60,6 +39,7 @@
   background: #161215;
   border-radius: 8px;
   color: #ffabf3;
+  overflow-y: auto;
 }
 
 /* Player and Computer Card Specific Styling */
