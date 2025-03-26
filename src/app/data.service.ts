@@ -16,6 +16,7 @@ export class DataService {
       def: 150,
       sAtk: null,
       sDef: 100,
+      image: 'assets/pokemon/Charizard.jpg',
     },
     {
       id: 12,
