@@ -19,7 +19,6 @@ export class HistoryContainerComponent {
     if (this.rerollCount > 0) {
       this.resetGame();
       this.loadPlayerPokemon;
-      this.loadComputerPokemon;
       this.rerollCount--;
     }
   }
