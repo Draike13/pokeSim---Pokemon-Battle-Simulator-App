@@ -15,7 +15,7 @@ export class ActivePlayerListComponent {
     this.getParty();
   }
 
-  getParty() {
+  get getParty() {
     return this.helperService.playerParty;
   }
 

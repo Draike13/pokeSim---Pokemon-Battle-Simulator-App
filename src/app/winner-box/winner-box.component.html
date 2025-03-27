@@ -2,26 +2,30 @@
   <mat-card-header class="header">
     <mat-card-title class="battle">BATTLE!</mat-card-title>
   </mat-card-header>
-  @if (computerPokemon){
+  @if (playerPokemon){
 
   <mat-card-content class="attack-total">
     <!-- Player Pokémon Card -->
     <mat-card class="inner-card player-card">
-      <mat-card-title>{{ playerPokemon().name }}</mat-card-title>
-      <mat-card-content>
-        <p>Attack: {{ playerAttack() }}</p>
-        <p>Type: {{ playerPokemon().type }}</p>
+      <mat-card-title class="title">{{ playerPokemon.name }}</mat-card-title>
+      <mat-card-content class="content">
+        <p class="stat">Attack: {{ playerAttack() }}</p>
+        <p class="stat">Type: {{ playerPokemon.type }}</p>
       </mat-card-content>
     </mat-card>
 
     <!-- Computer Pokémon Card -->
     <mat-card class="inner-card computer-card">
-      <mat-card-title>{{ computerPokemon.name }}</mat-card-title>
-      <mat-card-content>
-        <p>Attack: {{ computerAttack() }}</p>
-        <p>Type: {{ computerPokemon.type }}</p>
+      <mat-card-title class="title">{{ computerPokemon.name }}</mat-card-title>
+      <mat-card-content class="content">
+        <p class="stat">Attack: {{ computerAttack() }}</p>
+        <p class="stat">Type: {{ computerPokemon.type }}</p>
       </mat-card-content>
     </mat-card>
   </mat-card-content>
+  } @else if (!playerPokemon){
+  <p class="error-message" [ngClass]="{ show: this.showError }">
+    {{ this.showError }}
+  </p>
   }
 </mat-card>

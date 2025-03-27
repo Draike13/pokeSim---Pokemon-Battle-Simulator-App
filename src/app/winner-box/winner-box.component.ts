@@ -9,9 +9,12 @@ import {
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { HelperService } from '../helper.service';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { NgClass } from '@angular/common';
+
 @Component({
   selector: 'app-winner-box',
-  imports: [MatCardModule, MatButtonModule],
+  imports: [MatCardModule, MatButtonModule, MatProgressSpinnerModule, NgClass],
   templateUrl: './winner-box.component.html',
   styleUrl: './winner-box.component.css',
 })
@@ -23,6 +26,10 @@ export class WinnerBoxComponent {
   get playerPokemon() {
     return this.helperService.playerBattlePokemon();
   }
+  get showError() {
+    return this.helperService.errorMessage();
+  }
+
   battleReady = effect(() => {
     if (this.playerPokemon) {
       this.playerAttackCalc();
@@ -36,10 +43,10 @@ export class WinnerBoxComponent {
   computerAttack: WritableSignal<number | string> = signal('');
 
   playerAttackCalc() {
-    if (this.playerPokemon()?.atk !== null) {
-      this.playerAttack.set(this.playerPokemon().atk);
+    if (this.playerPokemon.atk !== null) {
+      this.playerAttack.set(this.playerPokemon.atk);
     } else {
-      this.playerAttack.set(this.playerPokemon().sAtk);
+      this.playerAttack.set(this.playerPokemon.sAtk);
     }
   }
   computerAttackCalc() {

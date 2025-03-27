@@ -39,7 +39,7 @@
   background: #161215;
   border-radius: 8px;
   color: #ffabf3;
-  overflow-y: auto;
+  overflow-y: hidden;
 }
 
 /* Player and Computer Card Specific Styling */
@@ -49,4 +49,28 @@
 
 .computer-card {
   border-color: #f44336; /* Red */
+}
+
+.content {
+  margin: 0;
+  padding: 0;
+}
+.stat {
+  margin: 0;
+}
+.title {
+  margin-bottom: 2px;
+}
+
+.error-message {
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  color: #cf1212;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+.show {
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
 }

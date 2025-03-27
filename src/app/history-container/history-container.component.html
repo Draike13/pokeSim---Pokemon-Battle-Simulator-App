@@ -4,9 +4,11 @@
     <mat-card-title><button mat-button>Wins</button></mat-card-title>
   </mat-card-header>
   <img mat-card-image [src]="eeveeImage" />
-  <mat-card-content> </mat-card-content>
+  <mat-card-content
+    ><div class="counter">{{ rerollCount }}</div>
+  </mat-card-content>
   <mat-card-actions class="options">
     <button mat-button>FAVORITE</button>
-    <button mat-button>REROLL</button>
+    <button (click)="reroll()" mat-button>REROLL</button>
   </mat-card-actions>
 </mat-card>

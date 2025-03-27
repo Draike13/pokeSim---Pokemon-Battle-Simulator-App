@@ -13,3 +13,16 @@
   position: absolute;
   bottom: 0;
 }
+.counter {
+  position: absolute;
+  bottom: 3rem;
+  right: 1.5rem;
+  font-size: 2rem;
+  color: #ffabf3;
+  border: #ffabf3 solid 2px;
+  border-radius: 50%;
+  height: 2rem;
+  width: 2rem;
+  display: flex;
+  justify-content: center;
+}

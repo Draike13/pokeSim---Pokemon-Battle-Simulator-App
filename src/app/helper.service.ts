@@ -18,8 +18,8 @@ export class HelperService {
     return this.dataService.pokeData();
   }
 
-  playerParty: Pokemon[] = [];
-  computerParty: Pokemon[] = [];
+  playerParty: WritableSignal<Pokemon[]> = signal([]);
+  computerParty: WritableSignal<Pokemon[]> = signal([]);
 
   playerBattlePokemon: WritableSignal<any> = signal('');
   computerBattlePokemon: WritableSignal<any> = signal('');
@@ -33,11 +33,11 @@ export class HelperService {
     do {
       let randomIndex = Math.floor(Math.random() * this.pokemon.length);
       if (
-        !this.playerParty.some(
+        !this.playerParty().some(
           (currentPokemon) => currentPokemon.id === this.pokemon[randomIndex].id
         )
       ) {
-        this.playerParty.push(this.pokemon[randomIndex]);
+        this.playerParty().push(this.pokemon[randomIndex]);
         partyCount++;
       }
     } while (partyCount < 6);
@@ -47,14 +47,14 @@ export class HelperService {
     do {
       let randomIndex = Math.floor(Math.random() * this.pokemon.length);
       if (
-        !this.computerParty.some(
+        !this.computerParty().some(
           (currentPokemon) => currentPokemon.id === this.pokemon[randomIndex].id
         ) &&
-        !this.playerParty.some(
+        !this.playerParty().some(
           (currentPokemon) => currentPokemon.id === this.pokemon[randomIndex].id
         )
       ) {
-        this.computerParty.push(this.pokemon[randomIndex]);
+        this.computerParty().push(this.pokemon[randomIndex]);
         partyCount++;
       }
     } while (partyCount < 6);
@@ -73,20 +73,34 @@ export class HelperService {
   }
 
   setupBattle(pokemon: Pokemon) {
-    this.playerParty.map((eachPokemon) => (eachPokemon.selected = false));
+    this.playerParty().map((eachPokemon) => (eachPokemon.selected = false));
     pokemon.selected = true;
     this.playerSelectPokemon.set(pokemon);
   }
   computerChoice() {
-    this.computerParty.map((eachPokemon) => (eachPokemon.selected = false));
-    let randomIndex = Math.floor(Math.random() * this.computerParty.length);
-    this.computerParty[randomIndex].selected = true;
-    this.computerBattlePokemon.set(this.computerParty[randomIndex]);
+    this.computerParty().map((eachPokemon) => (eachPokemon.selected = false));
+    let randomIndex = Math.floor(Math.random() * this.computerParty().length);
+    this.computerParty()[randomIndex].selected = true;
+    this.computerBattlePokemon.set(this.computerParty()[randomIndex]);
     this.setComputerBackground();
   }
 
   calculateBattle() {
-    this.computerChoice();
-    this.playerBattlePokemon.set(this.playerSelectPokemon);
+    try {
+      if (this.playerSelectPokemon()) {
+        this.computerChoice();
+        this.playerBattlePokemon.set({ ...this.playerSelectPokemon() });
+      } else throw new Error('No Pokemon Selected');
+    } catch (error: any) {
+      this.setError(error.message);
+    }
+  }
+  errorMessage: WritableSignal<string | null> = signal(null);
+
+  setError(message: string) {
+    this.errorMessage.set(message);
+    setTimeout(() => {
+      this.errorMessage.set(null);
+    }, 3000);
   }
 }

@@ -14,15 +14,15 @@ export class HeaderComponent {
 
   startGame() {
     this.resetGame();
-    this.loadPlayerPokemon();
-    this.loadComputerPokemon();
+    this.loadPlayerPokemon;
+    this.loadComputerPokemon;
   }
-  loadPlayerPokemon() {
-    this.helperService.playerParty = [];
+  get loadPlayerPokemon() {
+    this.helperService.playerParty.set([]);
     return this.helperService.makePlayerParty();
   }
-  loadComputerPokemon() {
-    this.helperService.computerParty = [];
+  get loadComputerPokemon() {
+    this.helperService.computerParty.set([]);
     return this.helperService.makeComputerParty();
   }
   resetGame() {
